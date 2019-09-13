@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Run the Jewels</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Header  -->
+        <div class="row">
+          <h1>Run the Jewels!</h1>
+        </div>
+      
+        <!-- instructions -->
+        <div class="row">
+          <div class="instructions">
+            <p>
+              <strong>You are given a random number at the start of the game.</strong>
+            </p>
+            <p>
+              <strong
+                >There are four crystals below. By clicking on a crystal you will add
+                a specific amount of points to your total score.</strong
+              >
+            </p>
+            <p>
+              <strong
+                >You win the game by matching your total score to the random number,
+                you lose the game if your total score goes above the random
+                number.</strong
+              >
+            </p>
+            <p>
+              <strong
+                >The value of each crystal is hidden from you until you click on
+                it.</strong
+              >
+            </p>
+            <p>
+              <strong
+                >Each time when the game starts, the game will chance the values of
+                each crystal.</strong
+              >
+            </p>
+          </div>
+        </div>
+      
+        <!-- score -->
+        <div class="row">
+          <div class="col-md-3">
+            <div >Goal:<span id="random-number"></span></div>
+          </div>
+          <div class="col-md-3"><div >Wins: <span id="userWins"></span></div></div>
+          <div class="col-md-3"><div >Losses: <span id="userLosses"></span></div></div>
+        </div>
+        <div class="row">
+          <!-- Buttons -->
+          <div class="images">
+            <img src="./assets/images/blue gem.png" class = "crystalbtn" id="jewel-1" />
+            <img src="./assets/images/purple_gem-removebg-preview.png" id="jewel-2" class = "crystalbtn" alt = "crystal2"/>
+            <img src="./assets/images/red_gem-removebg-preview.png" id="jewel-3" class = "crytsalbtn" alt = "crystal3" />
+            <img src="./assets/images/Green_Gem-removebg-preview.png" id="jewel-4" class = "crystalbtn" alt = "crystal4"/>
+          </div>
+        </div>
+      
+        <div class="row">
+          <h4>Your current total is:<span id="userTotal"></span></h4>
+        </div>
+      
+       
+      </div> 
+      <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+      <script src="./assets/javascript/game.js">
+      </script> 
+</body>
+
+</html>

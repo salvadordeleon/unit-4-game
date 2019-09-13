@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csrf-name" content="csrf5d7999e2c7688">
+	<meta name="csrf-value" content="4816c0172c170047e6c064408be014fd">
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>	<link rel="dns-prefetch" href="https://cdn.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn1.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn2.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn3.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn4.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn5.vectorstock.com">
+
+	<title>Realistic orange topaz jewel gem Royalty Free Vector Image</title>
+	<meta name="description" content="Realistic topaz jewel. Orange gem design illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions. ID #13361319.">
+	
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://www.vectorstock.com/royalty-free-vector/realistic-orange-topaz-jewel-gem-vector-13361319">
+	<meta property="og:title" content="Realistic orange topaz jewel gem vector image on VectorStock">
+	<meta property="og:description" content="Realistic topaz jewel. Orange gem design illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+	<meta property="og:image" content="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg">
+	<meta property="og:image:url" content="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg">
+	<meta property="og:image:secure_url" content="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<meta property="og:price:amount" content="0.69">
+	<meta property="og:price:currency" content="USD">
+	<meta property="product:price:amount" content="0.69">
+	<meta property="product:price:currency" content="USD">
+
+	<meta property="fb:app_id" content="241100862642313">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.vectorstock.com/royalty-free-vector/realistic-orange-topaz-jewel-gem-vector-13361319">
+	<meta name="twitter:title" content="Realistic orange topaz jewel gem vector image">
+	<meta name="twitter:description" content="Realistic topaz jewel. Orange gem design illustration">
+	<meta name="twitter:image" content="https://cdn5.vectorstock.com/i/thumb-large/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg">
+	<meta name="twitter:image:width" content="238">
+	<meta name="twitter:image:height" content="250">
+	<meta name="twitter:site" content="@VectorStock">
+
+	<link rel="canonical" href="https://www.vectorstock.com/royalty-free-vector/realistic-orange-topaz-jewel-gem-vector-13361319">
+	<link rel="shortcut icon" href="https://cdn.vectorstock.com/img/icons/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/common1566441531.min.css">
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/vector1566441531.min.css">
+	<script src="//cdn.vectorstock.com/cache/common1567645035.min.js"></script>
+	<script src="//cdn.vectorstock.com/cache/vector1567645035.min.js"></script>
+<!-- Analytics --><script type="text/javascript">// Load GA script
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// Setup
+ga('create', 'UA-2180430-2', 'none');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!-- Top header -->
+<header>
+	<nav class="top">
+		<figure>
+			<a href="/" title="VectorStock&reg;">VectorStock&reg;</a>
+		</figure>
+
+		<div class="grid">
+			<form id="searchbox"
+				 class="empty">
+				<div class="wrap">
+					<fieldset>
+						<div class="contents">
+							<div class="tags">
+								<ul></ul>
+							</div>
+							<div class="input">
+								<input type="text" name="input" autocomplete="off"
+									autocapitalize="none" spellcheck="true"
+									value="" placeholder="Search…">
+								<button type="button" data-action="clear">×</button>
+							</div>
+
+							<input type="hidden" name="category" value="">
+							<input type="hidden" name="custom_srp" value="">
+							<input type="hidden" name="artist" value="">
+							<input type="hidden" name="similar" value="">
+						</div>
+					</fieldset>
+
+					<button type="submit">
+						<span class="icon">Search</span>
+					</button>
+				</div>
+			</form>
+			<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+		</div>
+
+		<div class="aside">
+			<ul>
+				<li><a href="/popular-categories" title="Popular Categories">Popular
+						Categories</a></li>
+					<li><button type="button" data-action="signup">Sign Up</button></li>
+				</ul>
+		</div>
+
+		<div id="mobilenav-icon">
+			<span></span><span></span><span></span><span></span>
+		</div>
+	</nav>
+
+	<!-- Submenu -->
+		<nav id="searchrelated"></nav>	
+
+		<!-- Mobile menu -->
+	<div id="mobilenav-menu">
+		<div>
+			<div class="group">
+				<h4>Browse</h4>
+				<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+			</div>
+			<div class="group">
+				<h4>Account</h4>
+				<ul>
+					<li class="account">
+							<ul>
+								<li><a href="/signup">Sign Up</a></li>
+								<li data-action="login"><a href="/?login=1">Login…</a></li>
+							</ul>
+						</li>
+				</ul>
+				<form method="get" action="/auth/logout" class="logout">
+					<input type="hidden" name="logout" value="1">
+				</form>
+			</div>
+			<div class="group">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/faq"><abbr title="Frequently Asked Questions">FAQs</abbr></a></li>
+					<li><a href="/contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Account Menu Tabs -->
+		<aside id="nav_sidebar" class="tabs tabsDark">
+
+			<nav>
+				<ul role="tablist">
+					<li data-tab-id="signup" class=""><span role="tab"><span>Sign Up</span></span></li>
+					<li data-tab-id="login" class="selected"><span role="tab"><span>Log In</span></span></li>
+				</ul>
+			</nav>
+
+			<section id="sb_signup" data-tab-id="signup" class="">
+				<div class="primary">
+					<p>New to VectorStock?</p>
+					<p><em>We're the largest royalty-free, vector-only stock agency in the world.</em></p>
+					<p>Every week we add new premium graphics by the thousands.</p>
+				</div>
+				<div class="secondary">
+					<p>Whether you're a global ad&nbsp;agency or a freelance graphic designer, we have the vector graphics to make your project come to life.</p>
+					<p>Buy Vectors, sell Vectors or both. <a href="/signup">Sign up now, it’s free.</a></p>
+				</div>
+				<div class="footer">
+					<button class="master">
+						<span class="title">Sign Up...</span>
+						<span class="value">
+							<span class="symbol signup"></span>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section id="sb_login" data-tab-id="login" class="selected">
+				<form action="/auth/login" method="post">
+
+
+					<fieldset class="">
+						<label for="vs_username">Email / Username</label>
+						<div class="textfield">
+							<input type="text" id="vs_username" name="vs_username" value="" autocomplete="on" tabindex="1">
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<label for="vs_password">Password</label>
+						<button type="button" class="forgot">Forgot Password</button>
+						<div class="textfield">
+							<input type="password" id="vs_password" name="vs_password" value="" autocomplete="on" tabindex="2"  maxlength="20">
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="checkbox checked">
+							<label class="selected" for="vs_remember">
+								<span class="title">Stay Logged In</span>
+								<span class="icon"></span>
+								<input type="checkbox" id="vs_remember" name="vs_remember" value="yes" tabindex="3" checked>
+							</label>
+						</div>
+					</fieldset>
+
+
+					<button type="submit" tabindex="4">Log In</button>
+				</form>
+				<div class="alternatives">
+					<h6>Or Login With</h6>
+					<ul>
+						<li class="gp"><a href="/">
+							<span class="title">Google</span>
+							<span class="icon"></span>
+						</a></li>
+						<li class="fb"><a href="/">
+							<span class="title">Facebook</span>
+							<span class="icon"></span>
+						</a></li>
+					</ul>
+				</div>
+
+				
+			</section>
+		</aside>
+
+	<!-- Page -->
+	<article>
+		<section id="vs-asset">
+
+			<!-- Aside -->
+			<div class="aside">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" itemscope href="/royalty-free-vectors">
+							<span itemprop="name">Royalty Free Vectors</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" itemscope href="/royalty-free-vectors/jewel-orange-topaz-vectors">
+							<span itemprop="name">Jewel Orange Topaz Vectors</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+				</ol>
+
+				<h1>
+					Realistic orange topaz jewel gem vector&nbsp;image														</h1>
+
+				<figure style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg" title="Realistic orange topaz jewel gem vector image" alt="Realistic orange topaz jewel gem"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg" title="Realistic orange topaz jewel gem vector image" alt="Realistic orange topaz jewel gem">
+					</div>
+					<div class="overlay"></div>
+				</figure>
+
+				<form data-loggedin="0" data-licenses="2" data-license="standard" data-status="" data-payments="3" data-payment="single-image">
+					<input type="hidden" id="vector_id" value="13361319">
+					<input type="hidden" id="vector_title" value="Realistic orange topaz jewel gem">
+					<input type="hidden" id="vector_description" value="Realistic topaz jewel. Orange gem design illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<input type="hidden" id="vector_url" value="https://www.vectorstock.com/royalty-free-vector/realistic-orange-topaz-jewel-gem-vector-13361319">
+					<input type="hidden" id="vector_media" value="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg">
+					<input type="hidden" id="vector_ratio" value="1">
+					<input type="hidden" id="vector_license_status" value="">
+					<input type="hidden" id="artist_name" value="Shaitan1985">
+					<input type="hidden" id="account_user" value="0">
+
+					<div class="options">
+						<!--
+						-- OPTION: License type
+						-->
+						<div class="option" data-type="license" data-license="standard" data-licenses="2">
+							<h6><span class="type">License</span><a href="/faq/members/standard-license">Learn More</a></h6>
+							<div class="optgroup radgroup">
+								<fieldset>
+									<label for="f_license_standard" class="checked">
+										<input type="radio" id="f_license_standard" name="license" value="standard" checked="checked" tabindex="2">
+										<span class="label">Standard</span>
+										<span class="descr">For Print, Advertising, Design</span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_license_expanded">
+										<input type="radio" id="f_license_expanded" name="license" value="expanded" tabindex="4">
+										<span class="label">Expanded</span>
+										<span class="descr">For Resale &amp; Reproduction</span>
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="help">
+								<p>The license type determines how you can use this image.</p>
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+																						<th data-license="standard">Std.</th>																						<th data-license="expanded">Exp.</th>										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td>Print / Editorial</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Graphic Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Web Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Social Media</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Edit &amp; Modify</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Multi-user</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Resale Items</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Unlimited Runs</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!--
+						-- OPTION: Payment options (Standard)
+						-->
+						<div class="option" data-type="payment" data-license="standard">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="standard">
+																<fieldset>
+									<label for="f_payment_standard_single-image" class="checked" >
+										<input type="radio" id="f_payment_standard_single-image" name="payment_standard" data-cost="14.99" value="single-image"  checked="checked" tabindex="5">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>14.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_standard_credits">
+										<input type="radio" id="f_payment_standard_credits" name="payment_standard" data-cost="1" value="credits" tabindex="6">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>1.00</var></span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_payment_standard_subscription">
+										<input type="radio" id="f_payment_standard_subscription" name="payment_standard" data-cost="1" value="subscription" tabindex="7">
+										<span class="label">Subscription</span>
+										<span class="value"><small>$</small><var>0.69</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>There are three ways to pay for Standard licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Image Price</th>
+										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>14.99</span>
+												</span>
+												<span class="byline">One-time payment</span>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-As-You-Go Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>1</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1). Minimum purchase of 30.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Subscription Plan</span>
+													<span class="dm"></span>
+													<span class="dd"><em>From</em> 69c</span>
+												</span>
+												<span class="byline">Choose a monthly plan. Unused downloads automatically roll into following month.</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--
+						-- OPTION: Payment options (Expanded)
+						-->
+						<div class="option" data-type="payment" data-license="expanded">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="expanded">
+																<fieldset>
+									<label for="f_payment_expanded_single-image" class="checked">
+										<input type="radio" id="f_payment_expanded_single-image" name="payment_expanded" data-cost="29.99" value="single-image" checked="checked" tabindex="8">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>29.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_expanded_credits">
+										<input type="radio" id="f_payment_expanded_credits" name="payment_expanded" data-cost="30" value="credits" tabindex="9">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>30.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+														<div class="help">
+								<p>There are two ways to pay for Expanded licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Cost per Image</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>29.99</span>
+												</span>
+												<span class="byline">One-off payment, no signup needed.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>30</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1).</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+													</div>
+					</div>
+					<div class="download">
+						<button type="button" data-action="download">
+							<span class="label">Download Image</span>
+							<span class="icon"></span>
+						</button>
+						<h6><span class="label">Files Included</span></h6>
+						<div class="help">
+							<span class="loading"><span class="label">Loading Details...</span></span>
+						</div>
+					</div>
+					<div class="download_options">
+						<div class="wrap">
+							<div class="optgroup" data-action="download">
+								<span class="header">Download File/s:</span>
+								<div class="dropdown" data-value="zip">
+									<div class="display">
+										<span class="label"><strong>ZIP Archive</strong></span>
+										<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M10.6,12.8 15,17.2 19.4,12.8"/></svg></span>
+									</div>
+									<div class="select">
+										<select>
+											<optgroup label="All Files">
+												<option value="zip" data-label="ZIP Archive" data-details="" data-url="" selected="selected">ZIP Archive</option>											</optgroup>
+											<optgroup label="Image">
+												<option value="jpg" data-label="High-res JPG" data-details="300 DPI+" data-url="">High-res JPG (300 DPI+)</option>												<option value="png" data-label="High-res PNG" data-details="300 DPI+" data-url="">High-res PNG (300 DPI+)</option>											</optgroup>
+											<optgroup label="Vector">
+												<option value="ai" data-label="Adobe Illustrator" data-details="v10+" data-url="">Adobe Illustrator (v10+)</option>												<option value="eps" data-label="Vector EPS" data-details="v8+" data-url="">Vector EPS (v8+)</option>												<option value="pdf" data-label="Vector PDF" data-details="" data-url="">Vector PDF</option>											</optgroup>
+										</select>
+									</div>
+								</div>
+								<button type="button" data-action="download_file">
+									<span class="label">Download ZIP</span>
+									<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M23.6,21.2 23.6,9.5 16.4,9.5 16.4,21.3 10.8,21.3 11,21.5 20,30.5 29.2,21.3"/></svg></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Image -->
+			<div class="image">
+				<figure data-orientation="square" style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg" title="Realistic orange topaz jewel gem vector image" alt="Realistic orange topaz jewel gem"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg" title="Realistic orange topaz jewel gem vector image" alt="Realistic orange topaz jewel gem">
+					</div>
+					<div class="overlay"></div>
+					<div class="panels">
+						<div class="share">
+							<h4>Share on</h4>
+							<ul>
+								<li class="pinterest"><button type="button" data-action="pinterest"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M12.5,0C5.6,0,0,5.6,0,12.5c0,5.12,3.08,9.52,7.48,11.45c-0.03-0.87-0.01-1.92,0.22-2.87c0.24-1.01,1.61-6.81,1.61-6.81s-0.4-0.8-0.4-1.98c0-1.85,1.07-3.24,2.41-3.24c1.14,0,1.69,0.85,1.69,1.88c0,1.14-0.73,2.85-1.1,4.44c-0.31,1.33,0.67,2.41,1.97,2.41c2.37,0,3.96-3.04,3.96-6.65c0-2.74-1.85-4.79-5.2-4.79c-3.79,0-6.15,2.83-6.15,5.99c0,1.09,0.32,1.86,0.82,2.45c0.23,0.27,0.26,0.38,0.18,0.7c-0.06,0.23-0.2,0.78-0.25,1c-0.08,0.32-0.34,0.43-0.63,0.31c-1.75-0.71-2.56-2.62-2.56-4.77c0-3.55,3-7.81,8.93-7.81c4.77,0,7.91,3.45,7.91,7.16c0,4.9-2.73,8.57-6.75,8.57c-1.35,0-2.62-0.73-3.05-1.56c0,0-0.73,2.88-0.88,3.44c-0.27,0.96-0.78,1.93-1.26,2.68C10.08,24.82,11.27,25,12.5,25C19.4,25,25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z"/></svg></span><span class="label">Pinterest</span></span></button></li>
+								<li class="facebook"><button type="button" data-action="facebook"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M22.44,1H2.56C1.7,1,1,1.7,1,2.56v19.88C1,23.3,1.7,24,2.56,24h10.41v-8.89H9.98v-3.46h2.99V9.1c0-2.96,1.81-4.58,4.45-4.58c1.27,0,2.35,0.09,2.67,0.14v3.1l-1.83,0c-1.44,0-1.72,0.68-1.72,1.69v2.21h3.43l-0.45,3.46h-2.98V24h5.89C23.3,24,24,23.3,24,22.44V2.56C24,1.7,23.3,1,22.44,1z"/></svg></span><span class="label">Facebook</span></span></button></li>
+								<li class="twitter"><button type="button" data-action="twitter"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M7.86,22.5c9.43,0,14.59-7.69,14.59-14.37c0-0.22,0-0.44-0.01-0.65c1-0.71,1.87-1.6,2.56-2.61c-0.92,0.4-1.91,0.67-2.95,0.79c1.06-0.62,1.87-1.61,2.26-2.79c-0.99,0.58-2.09,1-3.26,1.23c-0.94-0.98-2.27-1.6-3.74-1.6c-2.83,0-5.13,2.26-5.13,5.05c0,0.4,0.05,0.78,0.13,1.15C8.05,8.49,4.27,6.48,1.74,3.42C1.3,4.17,1.05,5.04,1.05,5.96c0,1.75,0.91,3.3,2.28,4.2C2.49,10.14,1.7,9.91,1,9.53C1,9.55,1,9.58,1,9.6c0,2.45,1.77,4.49,4.11,4.95c-0.43,0.12-0.88,0.18-1.35,0.18c-0.33,0-0.65-0.03-0.96-0.09c0.65,2.01,2.55,3.47,4.79,3.51C5.84,19.5,3.63,20.3,1.22,20.3c-0.41,0-0.82-0.02-1.22-0.07C2.27,21.66,4.97,22.5,7.86,22.5"/></svg></span><span class="label">Twitter</span></span></button></li>
+							</ul>
+						</div>
+						<div class="composite">
+							<button type="button" data-action="download"><span><span class="label">Download JPG Preview Image</span></span></button>
+						</div>
+					</div>
+				</figure>
+				<div class="details">
+					<div class="meta">
+						<ul>
+							<li class="meta-id">
+								<dl><dt>Image ID</dt><dd>13361319</dd></dl>
+							</li>
+							<li class="meta-artist">
+								<dl>
+									<dt>Artist</dt>
+									<dd><a href="/royalty-free-vectors/vectors-by_Shaitan1985" rel="nofollow">Shaitan1985</a><button type="button" data-action="follow" title="Follow Artists that you like to create a newsfeed of their recent images."><span class="label">Follow</span></button></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="options" data-total="2">
+						<ul>
+							<li class="opt-like">
+								<button type="button" data-action="like" data-count="1"><span class="icon">&hearts;</span><span class="label">Like</span><span class="tally">(1)</span></button>
+							</li>
+							<li class="opt-cart">
+								<button type="button" data-action="cart"><span class="icon">+</span><span class="label">Cart</span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Metadata -->
+			<div class="metadata">
+				<div itemtype="http://schema.org/Product" itemscope>
+					<meta itemprop="sku" content="13361319">
+					<meta itemprop="productID" content="13361319">
+					<meta itemprop="name" content="Realistic orange topaz jewel gem">
+					<meta itemprop="description" content="Realistic topaz jewel. Orange gem design illustration. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<meta itemprop="releaseDate" content="2017-02-26">
+					<link itemprop="image" href="https://cdn5.vectorstock.com/i/1000x1000/13/19/realistic-orange-topaz-jewel-gem-vector-13361319.jpg">
+					
+					<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+						<meta itemprop="name" content="VectorStock">
+					</div>
+					<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+						<link itemprop="url" href="https://www.vectorstock.com/royalty-free-vector/realistic-orange-topaz-jewel-gem-vector-13361319">
+						<meta itemprop="availability" content="https://schema.org/InStock">
+						<div itemprop="price">0.69</div>
+						<div itemprop="priceCurrency">USD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="vs-related">
+			<div id="group-similar" class="group">
+				<h6><span class="icon"></span><strong>Similar Images</strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/26/33/yellow-topaz-jewelry-icon-realistic-style-vector-21432633.jpg"><a href="//www.vectorstock.com/royalty-free-vector/yellow-topaz-jewelry-icon-realistic-style-vector-21432633" title="yellow topaz jewelry icon realistic style vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/26/33/yellow-topaz-jewelry-icon-realistic-style-vector-21432633.jpg" title="yellow topaz jewelry icon realistic style" alt="yellow topaz jewelry icon realistic style vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/56/27/beautiful-set-of-diamonds-vector-1145627.jpg"><a href="//www.vectorstock.com/royalty-free-vector/beautiful-set-of-diamonds-vector-1145627" title="beautiful set of diamonds vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/56/27/beautiful-set-of-diamonds-vector-1145627.jpg" title="beautiful set of diamonds" alt="beautiful set of diamonds vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/07/94/realistic-detailed-3d-color-jewels-set-vector-21760794.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-detailed-3d-color-jewels-set-vector-21760794" title="realistic detailed 3d color jewels set vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/07/94/realistic-detailed-3d-color-jewels-set-vector-21760794.jpg" title="realistic detailed 3d color jewels set" alt="realistic detailed 3d color jewels set vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/75/52/set-of-realistic-yellow-gems-of-various-shapes-vector-13747552.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-realistic-yellow-gems-of-various-shapes-vector-13747552" title="set of realistic yellow gems of various shapes vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/75/52/set-of-realistic-yellow-gems-of-various-shapes-vector-13747552.jpg" title="set of realistic yellow gems of various shapes" alt="set of realistic yellow gems of various shapes vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/67/42/gems-precious-stones-set-shiny-jewels-collection-vector-13426742.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gems-precious-stones-set-shiny-jewels-collection-vector-13426742" title="gems precious stones set shiny jewels collection vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/67/42/gems-precious-stones-set-shiny-jewels-collection-vector-13426742.jpg" title="gems precious stones set shiny jewels collection" alt="gems precious stones set shiny jewels collection vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/81/59/set-of-realistic-yellow-topaz-jewels-vector-9618159.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-realistic-yellow-topaz-jewels-vector-9618159" title="Set of realistic yellow topaz jewels vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/81/59/set-of-realistic-yellow-topaz-jewels-vector-9618159.jpg" title="Set of realistic yellow topaz jewels" alt="Set of realistic yellow topaz jewels vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/60/32/jewel-diamond-in-a-glass-cube-vector-22436032.jpg"><a href="//www.vectorstock.com/royalty-free-vector/jewel-diamond-in-a-glass-cube-vector-22436032" title="jewel diamond in a glass cube vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/60/32/jewel-diamond-in-a-glass-cube-vector-22436032.jpg" title="jewel diamond in a glass cube" alt="jewel diamond in a glass cube vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/55/98/set-of-realistic-jewels-colorful-gemstones-vector-20755598.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-realistic-jewels-colorful-gemstones-vector-20755598" title="set of realistic jewels colorful gemstones vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/55/98/set-of-realistic-jewels-colorful-gemstones-vector-20755598.jpg" title="set of realistic jewels colorful gemstones" alt="set of realistic jewels colorful gemstones vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/73/56/rhino-logo-design-concept-template-vector-21187356.jpg"><a href="//www.vectorstock.com/royalty-free-vector/rhino-logo-design-concept-template-vector-21187356" title="rhino logo design concept template vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/73/56/rhino-logo-design-concept-template-vector-21187356.jpg" title="rhino logo design concept template" alt="rhino logo design concept template vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/97/82/design-diamond-logo-element-vector-3659782.jpg"><a href="//www.vectorstock.com/royalty-free-vector/design-diamond-logo-element-vector-3659782" title="Design diamond logo element vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/97/82/design-diamond-logo-element-vector-3659782.jpg" title="Design diamond logo element" alt="Design diamond logo element vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/99/49/diamonds-in-various-shapes-seamless-pattern-vector-24259949.jpg"><a href="//www.vectorstock.com/royalty-free-vector/diamonds-in-various-shapes-seamless-pattern-vector-24259949" title="diamonds in various shapes seamless pattern vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/99/49/diamonds-in-various-shapes-seamless-pattern-vector-24259949.jpg" title="diamonds in various shapes seamless pattern" alt="diamonds in various shapes seamless pattern vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/64/02/shiny-jewel-seamless-background-vector-26786402.jpg"><a href="//www.vectorstock.com/royalty-free-vector/shiny-jewel-seamless-background-vector-26786402" title="shiny jewel seamless background vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/64/02/shiny-jewel-seamless-background-vector-26786402.jpg" title="shiny jewel seamless background" alt="shiny jewel seamless background vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/39/44/topaz-gemstone-vector-23043944.jpg"><a href="//www.vectorstock.com/royalty-free-vector/topaz-gemstone-vector-23043944" title="topaz gemstone vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/39/44/topaz-gemstone-vector-23043944.jpg" title="topaz gemstone" alt="topaz gemstone vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/77/22/set-of-6-glossy-gemstones-of-different-vector-23517722.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-6-glossy-gemstones-of-different-vector-23517722" title="set of 6 glossy gemstones of different vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/77/22/set-of-6-glossy-gemstones-of-different-vector-23517722.jpg" title="set of 6 glossy gemstones of different" alt="set of 6 glossy gemstones of different vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/25/12/gemstone-crystals-and-jewel-gem-stones-jewelry-vector-23182512.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gemstone-crystals-and-jewel-gem-stones-jewelry-vector-23182512" title="gemstone crystals and jewel gem stones jewelry vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/25/12/gemstone-crystals-and-jewel-gem-stones-jewelry-vector-23182512.jpg" title="gemstone crystals and jewel gem stones jewelry" alt="gemstone crystals and jewel gem stones jewelry vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/12/76/glass-modern-geometrical-hexagon-abstract-vector-13591276.jpg"><a href="//www.vectorstock.com/royalty-free-vector/glass-modern-geometrical-hexagon-abstract-vector-13591276" title="glass modern geometrical hexagon abstract vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/12/76/glass-modern-geometrical-hexagon-abstract-vector-13591276.jpg" title="glass modern geometrical hexagon abstract" alt="glass modern geometrical hexagon abstract vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/99/57/collection-colorful-diamonds-isolated-on-white-vector-8389957.jpg"><a href="//www.vectorstock.com/royalty-free-vector/collection-colorful-diamonds-isolated-on-white-vector-8389957" title="Collection Colorful Diamonds Isolated on White vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/99/57/collection-colorful-diamonds-isolated-on-white-vector-8389957.jpg" title="Collection Colorful Diamonds Isolated on White" alt="Collection Colorful Diamonds Isolated on White vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/02/25/diamond-flat-icon-vector-21680225.jpg"><a href="//www.vectorstock.com/royalty-free-vector/diamond-flat-icon-vector-21680225" title="diamond flat icon vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/02/25/diamond-flat-icon-vector-21680225.jpg" title="diamond flat icon" alt="diamond flat icon vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/27/56/set-of-colored-gems-vector-21272756.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-colored-gems-vector-21272756" title="set of colored gems vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/27/56/set-of-colored-gems-vector-21272756.jpg" title="set of colored gems" alt="set of colored gems vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/04/48/line-style-diamond-crystal-set-on-white-background-vector-23080448.jpg"><a href="//www.vectorstock.com/royalty-free-vector/line-style-diamond-crystal-set-on-white-background-vector-23080448" title="line style diamond crystal set on white background vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/04/48/line-style-diamond-crystal-set-on-white-background-vector-23080448.jpg" title="line style diamond crystal set on white background" alt="line style diamond crystal set on white background vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="14760997" data-title="set of realistic multicolored gems chrysoberyl" data-src="https://cdn3.vectorstock.com/i/thumbs/09/97/set-of-realistic-multicolored-gems-chrysoberyl-vector-14760997.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-realistic-multicolored-gems-chrysoberyl-vector-14760997" title="set of realistic multicolored gems chrysoberyl vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/09/97/set-of-realistic-multicolored-gems-chrysoberyl-vector-14760997.jpg" title="set of realistic multicolored gems chrysoberyl" alt="set of realistic multicolored gems chrysoberyl vector image"></noscript></a></li>
+						<li data-id="4225807" data-title="Glossy jewel stones for game design" data-src="https://cdn3.vectorstock.com/i/thumbs/58/07/glossy-jewel-stones-for-game-design-vector-4225807.jpg"><a href="//www.vectorstock.com/royalty-free-vector/glossy-jewel-stones-for-game-design-vector-4225807" title="Glossy jewel stones for game design vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/58/07/glossy-jewel-stones-for-game-design-vector-4225807.jpg" title="Glossy jewel stones for game design" alt="Glossy jewel stones for game design vector image"></noscript></a></li>
+						<li data-id="18635618" data-title="set of yellow gems topaz of various shapes" data-src="https://cdn4.vectorstock.com/i/thumbs/56/18/set-of-yellow-gems-topaz-of-various-shapes-vector-18635618.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-yellow-gems-topaz-of-various-shapes-vector-18635618" title="set of yellow gems topaz of various shapes vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/56/18/set-of-yellow-gems-topaz-of-various-shapes-vector-18635618.jpg" title="set of yellow gems topaz of various shapes" alt="set of yellow gems topaz of various shapes vector image"></noscript></a></li>
+						<li data-id="22460333" data-title="jewels set gems and diamonds outline design" data-src="https://cdn4.vectorstock.com/i/thumbs/03/33/jewels-set-gems-and-diamonds-outline-design-vector-22460333.jpg"><a href="//www.vectorstock.com/royalty-free-vector/jewels-set-gems-and-diamonds-outline-design-vector-22460333" title="jewels set gems and diamonds outline design vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/03/33/jewels-set-gems-and-diamonds-outline-design-vector-22460333.jpg" title="jewels set gems and diamonds outline design" alt="jewels set gems and diamonds outline design vector image"></noscript></a></li>
+						<li data-id="26761934" data-title="gems cut design" data-src="https://cdn5.vectorstock.com/i/thumbs/19/34/gems-cut-design-vector-26761934.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gems-cut-design-vector-26761934" title="gems cut design vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/19/34/gems-cut-design-vector-26761934.jpg" title="gems cut design" alt="gems cut design vector image"></noscript></a></li>
+						<li data-id="1522023" data-title="Set of Four Gems Marquise Shaped" data-src="https://cdn4.vectorstock.com/i/thumbs/20/23/set-of-four-gems-marquise-shaped-vector-1522023.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-four-gems-marquise-shaped-vector-1522023" title="Set of Four Gems Marquise Shaped vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/20/23/set-of-four-gems-marquise-shaped-vector-1522023.jpg" title="Set of Four Gems Marquise Shaped" alt="Set of Four Gems Marquise Shaped vector image"></noscript></a></li>
+						<li data-id="22214138" data-title="shine diamond icons set" data-src="https://cdn4.vectorstock.com/i/thumbs/41/38/shine-diamond-icons-set-vector-22214138.jpg"><a href="//www.vectorstock.com/royalty-free-vector/shine-diamond-icons-set-vector-22214138" title="shine diamond icons set vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/41/38/shine-diamond-icons-set-vector-22214138.jpg" title="shine diamond icons set" alt="shine diamond icons set vector image"></noscript></a></li>
+						<li data-id="21101571" data-title="set a faceted and raw gemstone isolated on a white" data-src="https://cdn2.vectorstock.com/i/thumbs/15/71/set-a-faceted-and-raw-gemstone-isolated-on-a-white-vector-21101571.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-a-faceted-and-raw-gemstone-isolated-on-a-white-vector-21101571" title="set a faceted and raw gemstone isolated on a white vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/15/71/set-a-faceted-and-raw-gemstone-isolated-on-a-white-vector-21101571.jpg" title="set a faceted and raw gemstone isolated on a white" alt="set a faceted and raw gemstone isolated on a white vector image"></noscript></a></li>
+						<li data-id="13992737" data-title="magic crystal amethyst topaz blue quartz ruby" data-src="https://cdn3.vectorstock.com/i/thumbs/27/37/magic-crystal-amethyst-topaz-blue-quartz-ruby-vector-13992737.jpg"><a href="//www.vectorstock.com/royalty-free-vector/magic-crystal-amethyst-topaz-blue-quartz-ruby-vector-13992737" title="magic crystal amethyst topaz blue quartz ruby vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/27/37/magic-crystal-amethyst-topaz-blue-quartz-ruby-vector-13992737.jpg" title="magic crystal amethyst topaz blue quartz ruby" alt="magic crystal amethyst topaz blue quartz ruby vector image"></noscript></a></li>
+						<li data-id="7800549" data-title="Set different icons on blue background" data-src="https://cdn5.vectorstock.com/i/thumbs/05/49/set-different-icons-on-blue-background-vector-7800549.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-different-icons-on-blue-background-vector-7800549" title="Set different icons on blue background vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/05/49/set-different-icons-on-blue-background-vector-7800549.jpg" title="Set different icons on blue background" alt="Set different icons on blue background vector image"></noscript></a></li>
+						<li data-id="3292247" data-title="set of colorful shiny jewels" data-src="https://cdn3.vectorstock.com/i/thumbs/22/47/set-of-colorful-shiny-jewels-vector-3292247.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-colorful-shiny-jewels-vector-3292247" title="set of colorful shiny jewels vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/22/47/set-of-colorful-shiny-jewels-vector-3292247.jpg" title="set of colorful shiny jewels" alt="set of colorful shiny jewels vector image"></noscript></a></li>
+						<li data-id="7355794" data-title="Diamond cartoon icon" data-src="https://cdn5.vectorstock.com/i/thumbs/57/94/diamond-cartoon-icon-vector-7355794.jpg"><a href="//www.vectorstock.com/royalty-free-vector/diamond-cartoon-icon-vector-7355794" title="Diamond cartoon icon vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/57/94/diamond-cartoon-icon-vector-7355794.jpg" title="Diamond cartoon icon" alt="Diamond cartoon icon vector image"></noscript></a></li>
+						<li data-id="22445882" data-title="blue gemstones set" data-src="https://cdn3.vectorstock.com/i/thumbs/58/82/blue-gemstones-set-vector-22445882.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blue-gemstones-set-vector-22445882" title="blue gemstones set vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/58/82/blue-gemstones-set-vector-22445882.jpg" title="blue gemstones set" alt="blue gemstones set vector image"></noscript></a></li>
+						<li data-id="2223592" data-title="gem symbol" data-src="https://cdn3.vectorstock.com/i/thumbs/35/92/gem-symbol-vector-2223592.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gem-symbol-vector-2223592" title="gem symbol vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/35/92/gem-symbol-vector-2223592.jpg" title="gem symbol" alt="gem symbol vector image"></noscript></a></li>
+						<li data-id="13979203" data-title="gems and diamonds isolated icons set" data-src="https://cdn4.vectorstock.com/i/thumbs/92/03/gems-and-diamonds-isolated-icons-set-vector-13979203.jpg"><a href="//www.vectorstock.com/royalty-free-vector/gems-and-diamonds-isolated-icons-set-vector-13979203" title="gems and diamonds isolated icons set vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/92/03/gems-and-diamonds-isolated-icons-set-vector-13979203.jpg" title="gems and diamonds isolated icons set" alt="gems and diamonds isolated icons set vector image"></noscript></a></li>
+						<li data-id="2253408" data-title="Set of heart-shaped gemstones" data-src="https://cdn4.vectorstock.com/i/thumbs/34/08/set-of-heart-shaped-gemstones-vector-2253408.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-heart-shaped-gemstones-vector-2253408" title="Set of heart-shaped gemstones vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/34/08/set-of-heart-shaped-gemstones-vector-2253408.jpg" title="Set of heart-shaped gemstones" alt="Set of heart-shaped gemstones vector image"></noscript></a></li>
+						<li data-id="23753780" data-title="jewels gems jewelry diamond jewel heart crystal" data-src="https://cdn1.vectorstock.com/i/thumbs/37/80/jewels-gems-jewelry-diamond-jewel-heart-crystal-vector-23753780.jpg"><a href="//www.vectorstock.com/royalty-free-vector/jewels-gems-jewelry-diamond-jewel-heart-crystal-vector-23753780" title="jewels gems jewelry diamond jewel heart crystal vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/37/80/jewels-gems-jewelry-diamond-jewel-heart-crystal-vector-23753780.jpg" title="jewels gems jewelry diamond jewel heart crystal" alt="jewels gems jewelry diamond jewel heart crystal vector image"></noscript></a></li>
+						<li data-id="4210839" data-title="diamond flat icons set" data-src="https://cdn5.vectorstock.com/i/thumbs/08/39/diamond-flat-icons-set-vector-4210839.jpg"><a href="//www.vectorstock.com/royalty-free-vector/diamond-flat-icons-set-vector-4210839" title="diamond flat icons set vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/08/39/diamond-flat-icons-set-vector-4210839.jpg" title="diamond flat icons set" alt="diamond flat icons set vector image"></noscript></a></li>
+						<li data-id="1676517" data-title="diamonds frame" data-src="https://cdn3.vectorstock.com/i/thumbs/65/17/diamonds-frame-vector-1676517.jpg"><a href="//www.vectorstock.com/royalty-free-vector/diamonds-frame-vector-1676517" title="diamonds frame vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/65/17/diamonds-frame-vector-1676517.jpg" title="diamonds frame" alt="diamonds frame vector image"></noscript></a></li>
+						<li data-id="1608613" data-title="Colorful Shiny Jewels" data-src="https://cdn4.vectorstock.com/i/thumbs/86/13/colorful-shiny-jewels-vector-1608613.jpg"><a href="//www.vectorstock.com/royalty-free-vector/colorful-shiny-jewels-vector-1608613" title="Colorful Shiny Jewels vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/86/13/colorful-shiny-jewels-vector-1608613.jpg" title="Colorful Shiny Jewels" alt="Colorful Shiny Jewels vector image"></noscript></a></li>
+						<li data-id="10318315" data-title="Cartoon of gems and diamonds" data-src="https://cdn1.vectorstock.com/i/thumbs/83/15/cartoon-of-gems-and-diamonds-vector-10318315.jpg"><a href="//www.vectorstock.com/royalty-free-vector/cartoon-of-gems-and-diamonds-vector-10318315" title="Cartoon of gems and diamonds vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/83/15/cartoon-of-gems-and-diamonds-vector-10318315.jpg" title="Cartoon of gems and diamonds" alt="Cartoon of gems and diamonds vector image"></noscript></a></li>
+						<li data-id="1967671" data-title="Diamond flat icon with long shadow" data-src="https://cdn2.vectorstock.com/i/thumbs/76/71/diamond-flat-icon-with-long-shadow-vector-1967671.jpg"><a href="//www.vectorstock.com/royalty-free-vector/diamond-flat-icon-with-long-shadow-vector-1967671" title="Diamond flat icon with long shadow vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/76/71/diamond-flat-icon-with-long-shadow-vector-1967671.jpg" title="Diamond flat icon with long shadow" alt="Diamond flat icon with long shadow vector image"></noscript></a></li>
+						<li data-id="25629046" data-title="set rhinestones in caps isolated images" data-src="https://cdn2.vectorstock.com/i/thumbs/90/46/set-rhinestones-in-caps-isolated-images-vector-25629046.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-rhinestones-in-caps-isolated-images-vector-25629046" title="set rhinestones in caps isolated images vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/90/46/set-rhinestones-in-caps-isolated-images-vector-25629046.jpg" title="set rhinestones in caps isolated images" alt="set rhinestones in caps isolated images vector image"></noscript></a></li>
+						<li data-id="5310181" data-title="Design branded products with an of diamonds" data-src="https://cdn2.vectorstock.com/i/thumbs/01/81/design-branded-products-with-an-of-diamonds-vector-5310181.jpg"><a href="//www.vectorstock.com/royalty-free-vector/design-branded-products-with-an-of-diamonds-vector-5310181" title="Design branded products with an of diamonds vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/01/81/design-branded-products-with-an-of-diamonds-vector-5310181.jpg" title="Design branded products with an of diamonds" alt="Design branded products with an of diamonds vector image"></noscript></a></li>
+						<li data-id="9273355" data-title="Set of bright shiny gemstone on white" data-src="https://cdn1.vectorstock.com/i/thumbs/33/55/set-of-bright-shiny-gemstone-on-white-vector-9273355.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-bright-shiny-gemstone-on-white-vector-9273355" title="Set of bright shiny gemstone on white vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/33/55/set-of-bright-shiny-gemstone-on-white-vector-9273355.jpg" title="Set of bright shiny gemstone on white" alt="Set of bright shiny gemstone on white vector image"></noscript></a></li>
+						<li data-id="20863666" data-title="silver diamonds gems cutting stones jewellery" data-src="https://cdn2.vectorstock.com/i/thumbs/36/66/silver-diamonds-gems-cutting-stones-jewellery-vector-20863666.jpg"><a href="//www.vectorstock.com/royalty-free-vector/silver-diamonds-gems-cutting-stones-jewellery-vector-20863666" title="silver diamonds gems cutting stones jewellery vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/36/66/silver-diamonds-gems-cutting-stones-jewellery-vector-20863666.jpg" title="silver diamonds gems cutting stones jewellery" alt="silver diamonds gems cutting stones jewellery vector image"></noscript></a></li>
+						<li data-id="6426121" data-title="Flt diamond lined icon" data-src="https://cdn2.vectorstock.com/i/thumbs/61/21/flt-diamond-lined-icon-vector-6426121.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flt-diamond-lined-icon-vector-6426121" title="Flt diamond lined icon vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/61/21/flt-diamond-lined-icon-vector-6426121.jpg" title="Flt diamond lined icon" alt="Flt diamond lined icon vector image"></noscript></a></li>
+						<li data-id="24368830" data-title="four different diamond on backgrounds" data-src="https://cdn1.vectorstock.com/i/thumbs/88/30/four-different-diamond-on-backgrounds-vector-24368830.jpg"><a href="//www.vectorstock.com/royalty-free-vector/four-different-diamond-on-backgrounds-vector-24368830" title="four different diamond on backgrounds vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/88/30/four-different-diamond-on-backgrounds-vector-24368830.jpg" title="four different diamond on backgrounds" alt="four different diamond on backgrounds vector image"></noscript></a></li>
+						<li data-id="1980427" data-title="Set of jewels" data-src="https://cdn3.vectorstock.com/i/thumbs/04/27/set-of-jewels-vector-1980427.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-jewels-vector-1980427" title="Set of jewels vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/04/27/set-of-jewels-vector-1980427.jpg" title="Set of jewels" alt="Set of jewels vector image"></noscript></a></li>
+						<li data-id="2070080" data-title="Triangle diamond background" data-src="https://cdn1.vectorstock.com/i/thumbs/00/80/triangle-diamond-background-vector-2070080.jpg"><a href="//www.vectorstock.com/royalty-free-vector/triangle-diamond-background-vector-2070080" title="Triangle diamond background vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/00/80/triangle-diamond-background-vector-2070080.jpg" title="Triangle diamond background" alt="Triangle diamond background vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/jewel-orange-topaz-vectors"><span class="lrg">More Jewel Orange Topaz Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-artist" class="group">
+				<h6><span class="icon"></span><strong>More by <a href="/royalty-free-vectors/vectors-by_Shaitan1985" rel="nofollow">Shaitan1985</a></strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/57/18/golden-topaz-gem-shining-logo-drop-shaped-vector-23575718.jpg"><a href="//www.vectorstock.com/royalty-free-vector/golden-topaz-gem-shining-logo-drop-shaped-vector-23575718" title="golden topaz gem shining logo drop shaped vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/57/18/golden-topaz-gem-shining-logo-drop-shaped-vector-23575718.jpg" title="golden topaz gem shining logo drop shaped" alt="golden topaz gem shining logo drop shaped vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/13/27/realistic-topaz-jewel-gem-vector-13361327.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-topaz-jewel-gem-vector-13361327" title="realistic topaz jewel gem vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/13/27/realistic-topaz-jewel-gem-vector-13361327.jpg" title="realistic topaz jewel gem" alt="realistic topaz jewel gem vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/71/42/set-round-jewels-different-colors-gemstones-vector-24747142.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-round-jewels-different-colors-gemstones-vector-24747142" title="set round jewels different colors gemstones vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/71/42/set-round-jewels-different-colors-gemstones-vector-24747142.jpg" title="set round jewels different colors gemstones" alt="set round jewels different colors gemstones vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/20/73/set-of-round-gems-stones-of-different-colors-vector-23842073.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-round-gems-stones-of-different-colors-vector-23842073" title="set of round gems stones of different colors vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/20/73/set-of-round-gems-stones-of-different-colors-vector-23842073.jpg" title="set of round gems stones of different colors" alt="set of round gems stones of different colors vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/71/26/set-round-jewels-different-colors-gemstones-vector-24747126.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-round-jewels-different-colors-gemstones-vector-24747126" title="set round jewels different colors gemstones vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/71/26/set-round-jewels-different-colors-gemstones-vector-24747126.jpg" title="set round jewels different colors gemstones" alt="set round jewels different colors gemstones vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/19/00/realistic-topaz-shaped-gem-vector-12891900.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-topaz-shaped-gem-vector-12891900" title="Realistic topaz shaped Gem vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/19/00/realistic-topaz-shaped-gem-vector-12891900.jpg" title="Realistic topaz shaped Gem" alt="Realistic topaz shaped Gem vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/07/72/set-of-drop-shaped-gemstones-of-different-colors-vector-24250772.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-drop-shaped-gemstones-of-different-colors-vector-24250772" title="set of drop shaped gemstones of different colors vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/07/72/set-of-drop-shaped-gemstones-of-different-colors-vector-24250772.jpg" title="set of drop shaped gemstones of different colors" alt="set of drop shaped gemstones of different colors vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/56/32/set-of-drop-shaped-gem-stones-of-different-colors-vector-23575632.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-drop-shaped-gem-stones-of-different-colors-vector-23575632" title="set of drop shaped gem stones of different colors vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/56/32/set-of-drop-shaped-gem-stones-of-different-colors-vector-23575632.jpg" title="set of drop shaped gem stones of different colors" alt="set of drop shaped gem stones of different colors vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/13/48/set-drop-shaped-gemstones-different-colors-vector-24901348.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-drop-shaped-gemstones-different-colors-vector-24901348" title="set drop shaped gemstones different colors vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/13/48/set-drop-shaped-gemstones-different-colors-vector-24901348.jpg" title="set drop shaped gemstones different colors" alt="set drop shaped gemstones different colors vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/19/18/realistic-diamond-jewel-shaped-gem-vector-12891918.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-diamond-jewel-shaped-gem-vector-12891918" title="Realistic diamond jewel shaped Gem vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/19/18/realistic-diamond-jewel-shaped-gem-vector-12891918.jpg" title="Realistic diamond jewel shaped Gem" alt="Realistic diamond jewel shaped Gem vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="24353249" data-title="set of drop shaped gemstones of different colors" data-src="https://cdn5.vectorstock.com/i/thumbs/32/49/set-of-drop-shaped-gemstones-of-different-colors-vector-24353249.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-drop-shaped-gemstones-of-different-colors-vector-24353249" title="set of drop shaped gemstones of different colors vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/32/49/set-of-drop-shaped-gemstones-of-different-colors-vector-24353249.jpg" title="set of drop shaped gemstones of different colors" alt="set of drop shaped gemstones of different colors vector image vector image"></noscript></a></li>
+						<li data-id="24747146" data-title="set gemstones different colors jewels for" data-src="https://cdn2.vectorstock.com/i/thumbs/71/46/set-gemstones-different-colors-jewels-for-vector-24747146.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-gemstones-different-colors-jewels-for-vector-24747146" title="set gemstones different colors jewels for vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/71/46/set-gemstones-different-colors-jewels-for-vector-24747146.jpg" title="set gemstones different colors jewels for" alt="set gemstones different colors jewels for vector image vector image"></noscript></a></li>
+						<li data-id="24747136" data-title="set oval jewels different colors gemstones" data-src="https://cdn2.vectorstock.com/i/thumbs/71/36/set-oval-jewels-different-colors-gemstones-vector-24747136.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-oval-jewels-different-colors-gemstones-vector-24747136" title="set oval jewels different colors gemstones vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/71/36/set-oval-jewels-different-colors-gemstones-vector-24747136.jpg" title="set oval jewels different colors gemstones" alt="set oval jewels different colors gemstones vector image vector image"></noscript></a></li>
+						<li data-id="23845303" data-title="jewels set gem stock" data-src="https://cdn4.vectorstock.com/i/thumbs/53/03/jewels-set-gem-stock-vector-23845303.jpg"><a href="//www.vectorstock.com/royalty-free-vector/jewels-set-gem-stock-vector-23845303" title="jewels set gem stock vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/53/03/jewels-set-gem-stock-vector-23845303.jpg" title="jewels set gem stock" alt="jewels set gem stock vector image vector image"></noscript></a></li>
+						<li data-id="23845314" data-title="jewels set gem stock" data-src="https://cdn5.vectorstock.com/i/thumbs/53/14/jewels-set-gem-stock-vector-23845314.jpg"><a href="//www.vectorstock.com/royalty-free-vector/jewels-set-gem-stock-vector-23845314" title="jewels set gem stock vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/53/14/jewels-set-gem-stock-vector-23845314.jpg" title="jewels set gem stock" alt="jewels set gem stock vector image vector image"></noscript></a></li>
+						<li data-id="23845305" data-title="jewels set gem stock" data-src="https://cdn1.vectorstock.com/i/thumbs/53/05/jewels-set-gem-stock-vector-23845305.jpg"><a href="//www.vectorstock.com/royalty-free-vector/jewels-set-gem-stock-vector-23845305" title="jewels set gem stock vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/53/05/jewels-set-gem-stock-vector-23845305.jpg" title="jewels set gem stock" alt="jewels set gem stock vector image vector image"></noscript></a></li>
+						<li data-id="23845310" data-title="jewels set gem stock" data-src="https://cdn1.vectorstock.com/i/thumbs/53/10/jewels-set-gem-stock-vector-23845310.jpg"><a href="//www.vectorstock.com/royalty-free-vector/jewels-set-gem-stock-vector-23845310" title="jewels set gem stock vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/53/10/jewels-set-gem-stock-vector-23845310.jpg" title="jewels set gem stock" alt="jewels set gem stock vector image vector image"></noscript></a></li>
+						<li data-id="13354423" data-title="topaz gem jewel icon" data-src="https://cdn4.vectorstock.com/i/thumbs/44/23/topaz-gem-jewel-icon-vector-13354423.jpg"><a href="//www.vectorstock.com/royalty-free-vector/topaz-gem-jewel-icon-vector-13354423" title="topaz gem jewel icon vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/44/23/topaz-gem-jewel-icon-vector-13354423.jpg" title="topaz gem jewel icon" alt="topaz gem jewel icon vector image vector image"></noscript></a></li>
+						<li data-id="23575606" data-title="set of gems stones of different colors" data-src="https://cdn2.vectorstock.com/i/thumbs/56/06/set-of-gems-stones-of-different-colors-vector-23575606.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-gems-stones-of-different-colors-vector-23575606" title="set of gems stones of different colors vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/56/06/set-of-gems-stones-of-different-colors-vector-23575606.jpg" title="set of gems stones of different colors" alt="set of gems stones of different colors vector image vector image"></noscript></a></li>
+						<li data-id="23575603" data-title="set of gems stones of different colors" data-src="https://cdn4.vectorstock.com/i/thumbs/56/03/set-of-gems-stones-of-different-colors-vector-23575603.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-gems-stones-of-different-colors-vector-23575603" title="set of gems stones of different colors vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/56/03/set-of-gems-stones-of-different-colors-vector-23575603.jpg" title="set of gems stones of different colors" alt="set of gems stones of different colors vector image vector image"></noscript></a></li>
+						<li data-id="23575614" data-title="square gems set isolated on white" data-src="https://cdn5.vectorstock.com/i/thumbs/56/14/square-gems-set-isolated-on-white-vector-23575614.jpg"><a href="//www.vectorstock.com/royalty-free-vector/square-gems-set-isolated-on-white-vector-23575614" title="square gems set isolated on white vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/56/14/square-gems-set-isolated-on-white-vector-23575614.jpg" title="square gems set isolated on white" alt="square gems set isolated on white vector image vector image"></noscript></a></li>
+						<li data-id="23575609" data-title="abstract gem pink geometric background for" data-src="https://cdn5.vectorstock.com/i/thumbs/56/09/abstract-gem-pink-geometric-background-for-vector-23575609.jpg"><a href="//www.vectorstock.com/royalty-free-vector/abstract-gem-pink-geometric-background-for-vector-23575609" title="abstract gem pink geometric background for vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/56/09/abstract-gem-pink-geometric-background-for-vector-23575609.jpg" title="abstract gem pink geometric background for" alt="abstract gem pink geometric background for vector image vector image"></noscript></a></li>
+						<li data-id="9647234" data-title="Topaz flat icon with top view Rich luxury symbol" data-src="https://cdn5.vectorstock.com/i/thumbs/72/34/topaz-flat-icon-with-top-view-rich-luxury-symbol-vector-9647234.jpg"><a href="//www.vectorstock.com/royalty-free-vector/topaz-flat-icon-with-top-view-rich-luxury-symbol-vector-9647234" title="Topaz flat icon with top view Rich luxury symbol vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/72/34/topaz-flat-icon-with-top-view-rich-luxury-symbol-vector-9647234.jpg" title="Topaz flat icon with top view Rich luxury symbol" alt="Topaz flat icon with top view Rich luxury symbol vector image vector image"></noscript></a></li>
+						<li data-id="13361304" data-title="realistic sapphire jewel gem" data-src="https://cdn5.vectorstock.com/i/thumbs/13/04/realistic-sapphire-jewel-gem-vector-13361304.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-sapphire-jewel-gem-vector-13361304" title="realistic sapphire jewel gem vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/13/04/realistic-sapphire-jewel-gem-vector-13361304.jpg" title="realistic sapphire jewel gem" alt="realistic sapphire jewel gem vector image vector image"></noscript></a></li>
+						<li data-id="12891869" data-title="realistic ruby gem jewel" data-src="https://cdn5.vectorstock.com/i/thumbs/18/69/realistic-ruby-gem-jewel-vector-12891869.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-ruby-gem-jewel-vector-12891869" title="realistic ruby gem jewel vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/18/69/realistic-ruby-gem-jewel-vector-12891869.jpg" title="realistic ruby gem jewel" alt="realistic ruby gem jewel vector image vector image"></noscript></a></li>
+						<li data-id="13361280" data-title="realistic diamond jewel gem" data-src="https://cdn1.vectorstock.com/i/thumbs/12/80/realistic-diamond-jewel-gem-vector-13361280.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-diamond-jewel-gem-vector-13361280" title="realistic diamond jewel gem vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/12/80/realistic-diamond-jewel-gem-vector-13361280.jpg" title="realistic diamond jewel gem" alt="realistic diamond jewel gem vector image vector image"></noscript></a></li>
+						<li data-id="12891925" data-title="Realistic sapphire shaped Blue gem" data-src="https://cdn1.vectorstock.com/i/thumbs/19/25/realistic-sapphire-shaped-blue-gem-vector-12891925.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-sapphire-shaped-blue-gem-vector-12891925" title="Realistic sapphire shaped Blue gem vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/19/25/realistic-sapphire-shaped-blue-gem-vector-12891925.jpg" title="Realistic sapphire shaped Blue gem" alt="Realistic sapphire shaped Blue gem vector image vector image"></noscript></a></li>
+						<li data-id="12891913" data-title="Realistic emerald jewel shaped Gem" data-src="https://cdn4.vectorstock.com/i/thumbs/19/13/realistic-emerald-jewel-shaped-gem-vector-12891913.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-emerald-jewel-shaped-gem-vector-12891913" title="Realistic emerald jewel shaped Gem vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/19/13/realistic-emerald-jewel-shaped-gem-vector-12891913.jpg" title="Realistic emerald jewel shaped Gem" alt="Realistic emerald jewel shaped Gem vector image vector image"></noscript></a></li>
+						<li data-id="13361289" data-title="realistic emerald jewel gem" data-src="https://cdn5.vectorstock.com/i/thumbs/12/89/realistic-emerald-jewel-gem-vector-13361289.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-emerald-jewel-gem-vector-13361289" title="realistic emerald jewel gem vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/12/89/realistic-emerald-jewel-gem-vector-13361289.jpg" title="realistic emerald jewel gem" alt="realistic emerald jewel gem vector image vector image"></noscript></a></li>
+						<li data-id="24986367" data-title="diamond gem stock" data-src="https://cdn3.vectorstock.com/i/thumbs/63/67/diamond-gem-stock-vector-24986367.jpg"><a href="//www.vectorstock.com/royalty-free-vector/diamond-gem-stock-vector-24986367" title="diamond gem stock vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/63/67/diamond-gem-stock-vector-24986367.jpg" title="diamond gem stock" alt="diamond gem stock vector image vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-by_Shaitan1985" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-keywords" class="group">
+				<h6><span class="icon"></span><strong>Related Searches</strong></h6>
+				<ul>
+					<li><a href="/royalty-free-vectors/jewel-vectors">Jewel</a></li>
+					<li><a href="/royalty-free-vectors/orange-vectors">Orange</a></li>
+					<li><a href="/royalty-free-vectors/topaz-vectors">Topaz</a></li>
+					<li><a href="/royalty-free-vectors/gemstone-vectors">Gemstone</a></li>
+					<li><a href="/royalty-free-vectors/realistic-vectors">Realistic</a></li>
+					<li><a href="/royalty-free-vectors/gem-vectors">Gem</a></li>
+					<li><a href="/royalty-free-vectors/design-vectors">Design</a></li>
+					<li><a href="/royalty-free-vectors/background-vectors">Background</a></li>
+					<li><a href="/royalty-free-vectors/treasure-vectors">Treasure</a></li>
+					<li><a href="/royalty-free-vectors/glowing-vectors">Glowing</a></li>
+					<li><a href="/royalty-free-vectors/isolated-vectors">Isolated</a></li>
+					<li><a href="/royalty-free-vectors/shiny-vectors">Shiny</a></li>
+					<li><a href="/royalty-free-vectors/stone-vectors">Stone</a></li>
+					<li><a href="/royalty-free-vectors/precious-vectors">Precious</a></li>
+					<li><a href="/royalty-free-vectors/luxury-vectors">Luxury</a></li>
+					<li><a href="/royalty-free-vectors/diamond-vectors">Diamond</a></li>
+					<li><a href="/royalty-free-vectors/crystal-vectors">Crystal</a></li>
+					<li><a href="/royalty-free-vectors/jewelry-vectors">Jewelry</a></li>
+					<li><a href="/royalty-free-vectors/transparent-vectors">Transparent</a></li>
+					<li><a href="/royalty-free-vectors/crafts-vectors">Crafts</a></li>
+					<li><a href="/royalty-free-vectors/bonus-vectors">Bonus</a></li>
+					<li><a href="/royalty-free-vectors/carat-vectors">Carat</a></li>
+					<li><a href="/royalty-free-vectors/glass-vectors">Glass</a></li>
+					<li><a href="/royalty-free-vectors/wealth-vectors">Wealth</a></li>
+					<li><a href="/royalty-free-vectors/icon-vectors">Icon</a></li>
+					<li><a href="/royalty-free-vectors/beautiful-vectors">Beautiful</a></li>
+					<li><a href="/royalty-free-vectors/wedding-vectors">Wedding</a></li>
+					<li><a href="/royalty-free-vectors/fashion-vectors">Fashion</a></li>
+					<li><a href="/royalty-free-vectors/shape-vectors">Shape</a></li>
+					<li><a href="/royalty-free-vectors/business-vectors">Business</a></li>
+					<li><a href="/royalty-free-vectors/garnet-vectors">Garnet</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<!-- Footer -->
+	<footer>
+
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Royalty-Free Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+									</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+					<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/signup?contributor" title="Become a VectorStock Contributor">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					</ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="http://www.facebook.com/VectorStock" target="_blank"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="http://pinterest.com/vectorstock/" target="_blank"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://twitter.com/VectorStock" target="_blank"><span class="title">Twitter</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock®">VectorStock®</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				© 2019. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+	</div></footer>
+
+
+	<script src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJRQXFwpaFhNeSwNeTB9MAhEAUhQXVFEWXUpJFw0GEg==","queueTime":0,"applicationTime":339,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>
